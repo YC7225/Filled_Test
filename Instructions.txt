@@ -1,0 +1,72 @@
+Hello,
+
+I have completed this chellenge using flask and mongodb.
+i have created a one database.py python script file which content all the necesseary actions with the database
+I have created a one more file name app.py which is the main application for running this files you should have mongodb with "filled" database name and "audio_files_record" collection name.
+you should have python 3.6 or 3.6+ version
+after that you have to install some requirement which is inside the requirements.txt file.
+
+after that you have to run python3 or python app.py
+server will start
+
+as mentioned in the test 
+
+i have created a 4 api :-
+1. Create 
+	url = http://127.0.0.1:5000/api/v1/create
+	method = POST
+	content = application/json
+	strcture :- 
+
+				1. song 
+
+						{
+						  "audioFileType":"song",
+						  "audioFileMetadata":{
+						      "uploaded_time":<upload time>>,
+						      "duration_time":<time duration in seconds>,
+						      "name":"<name of song>"
+						      }
+						  }
+
+				2. podcast
+
+						{
+					      "audioFileType":"podcast",
+					      "audioFileMetadata":{
+					              "uploaded_time":"0",
+					              "duration_time":102,
+					              "name":"in the end.mp4",
+					              "host":"linkin park - arizona park",
+					              "participents":["linkin park","us","american band"]
+					      }
+					   } 
+
+				3. audiobook
+						{
+					      "audioFileType":"audiobook",
+					      "audioFileMetadata":{
+					              "uploaded_time":"0",
+					              "duration_time":102,
+					              "title":"in the end.mp4",
+					              "author":"linkin park",
+					              "narrator":"linkin park"
+					      }
+					  }     
+
+2. Update
+	url = http://127.0.0.1:5000/api/v1/update/<audioFileType>/<audioFileID>
+	method = PUT
+	content = application/json
+3. Delete
+	url = http://127.0.0.1:5000/api/v1/update/<audioFileType>/<audioFileID>
+	methods = DELETE
+	content = application/json
+4. GET 
+	1. 	url = http://127.0.0.1:5000/api/v1/update/<audioFileType>
+		method = GET
+		Content = application/json
+
+	2.	url = http://127.0.0.1:5000/api/v1/update/<audioFileType>/<audioFileID>
+		method = GET
+		content = application/json
